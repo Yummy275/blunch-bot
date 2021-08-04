@@ -1,8 +1,8 @@
 const fetch = require('node-fetch');
 require('dotenv').config();
-
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const blunch67 = require('./images/blunch67.jpg');
 client.login(process.env.BOTTOKEN);
 
 client.on('ready', () => {
@@ -57,5 +57,7 @@ client.on('message', (msg) => {
     } else if (msg.content === 'Happy Glob day!') {
         returnMessage = globDayWords[getRandomInt(0, globDayWords.length - 1)];
         msg.channel.send(returnMessage);
+    } else if (msg.content === 'You like the weather corn?') {
+        msg.channel.send('', { files: [blunch67] });
     }
 });
